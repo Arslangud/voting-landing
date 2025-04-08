@@ -80,7 +80,7 @@
         <span class="text-sky-100 font-medium w-full">Елизавета Гостюгова</span>
       </label>
       <div class="text-center pt-8">
-        <button type="submit" id="voteButton" class="inline-block bg-sky-600 text-white text-lg font-semibold py-3 px-10 rounded-full shadow transition-all duration-300 animate-bounce-hover" disabled onclick="location.href='https://relocatedin.ru/vote'; return false;">Проголосовать</button>
+        <button type="submit" id="voteButton" class="inline-block bg-sky-600 text-white text-lg font-semibold py-3 px-10 rounded-full shadow transition-all duration-300 animate-bounce-hover" disabled onclick="location.href='https://24salbo.ru/game'; return false;">Проголосовать</button>
       </div>
     </form>
   </section>
@@ -102,12 +102,12 @@
 
   <script>
     const voteForm = document.getElementById('voteForm');
-    const voteLink = document.getElementById('voteButton');
+    const voteButton = document.getElementById('voteButton');
     const radioButtons = voteForm.querySelectorAll('input[name="vote"]');
 
     radioButtons.forEach(radio => {
       radio.addEventListener('change', () => {
-        voteLink.classList.remove("pointer-events-none", "opacity-50");
+        voteButton.disabled = false;
       });
     });
 
