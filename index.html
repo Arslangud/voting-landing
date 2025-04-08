@@ -38,6 +38,13 @@
         transform: translateY(-10px);
       }
     }
+    input[type="radio"]:checked + span {
+      background-color: #0284c7;
+      transform: scale(1.05);
+      transition: all 0.3s ease-in-out;
+      border-radius: 0.5rem;
+      padding: 0.25rem 0.5rem;
+    }
   </style>
 </head>
 <body class="bg-slate-900">
@@ -50,30 +57,30 @@
   </section>
 
   <section class="pt-8 pb-16 px-4 bg-overlay fade-in">
-    <h2 class="text-2xl font-semibold text-center text-white mb-8">Участники голосования: Евгения Герасимчук</h2>
-    <form class="max-w-2xl mx-auto space-y-4">
+    <h2 class="text-2xl font-semibold text-center text-white mb-6">Участники голосования</h2>
+    <form class="max-w-2xl mx-auto space-y-4" id="voteForm">
       <label class="flex items-center bg-slate-800 p-4 rounded-xl cursor-pointer hover:bg-slate-700 transition">
-        <input type="radio" name="vote" class="form-radio text-sky-400 mr-4" />
-        <span class="text-sky-100 font-medium">Сергей Евтушенко</span>
+        <input type="radio" name="vote" class="form-radio text-sky-400 mr-4 hidden" value="Сергей Евтушенко" />
+        <span class="text-sky-100 font-medium w-full">Сергей Евтушенко</span>
       </label>
       <label class="flex items-center bg-slate-800 p-4 rounded-xl cursor-pointer hover:bg-slate-700 transition">
-        <input type="radio" name="vote" class="form-radio text-sky-400 mr-4" />
-        <span class="text-sky-100 font-medium">Виктория Перцева</span>
+        <input type="radio" name="vote" class="form-radio text-sky-400 mr-4 hidden" value="Виктория Перцева" />
+        <span class="text-sky-100 font-medium w-full">Виктория Перцева</span>
       </label>
       <label class="flex items-center bg-slate-800 p-4 rounded-xl cursor-pointer hover:bg-slate-700 transition">
-        <input type="radio" name="vote" class="form-radio text-sky-400 mr-4" />
-        <span class="text-sky-100 font-medium">Евгений Герасимчук</span>
+        <input type="radio" name="vote" class="form-radio text-sky-400 mr-4 hidden" value="Евгения Герасимчук" />
+        <span class="text-sky-100 font-medium w-full">Евгения Герасимчук</span>
       </label>
       <label class="flex items-center bg-slate-800 p-4 rounded-xl cursor-pointer hover:bg-slate-700 transition">
-        <input type="radio" name="vote" class="form-radio text-sky-400 mr-4" />
-        <span class="text-sky-100 font-medium">Арсен Маркасян</span>
+        <input type="radio" name="vote" class="form-radio text-sky-400 mr-4 hidden" value="Арсен Маркасян" />
+        <span class="text-sky-100 font-medium w-full">Арсен Маркасян</span>
       </label>
       <label class="flex items-center bg-slate-800 p-4 rounded-xl cursor-pointer hover:bg-slate-700 transition">
-        <input type="radio" name="vote" class="form-radio text-sky-400 mr-4" />
-        <span class="text-sky-100 font-medium">Елизавета Гостюгова</span>
+        <input type="radio" name="vote" class="form-radio text-sky-400 mr-4 hidden" value="Елизавета Гостюгова" />
+        <span class="text-sky-100 font-medium w-full">Елизавета Гостюгова</span>
       </label>
       <div class="text-center pt-8">
-        <a href="https://24salbo.ru/game" class="inline-block bg-sky-600 hover:bg-sky-700 text-white text-lg font-semibold py-3 px-10 rounded-full shadow transition-all duration-300 animate-bounce-hover">Проголосовать</a>
+        <button type="submit" id="voteButton" class="inline-block bg-sky-600 text-white text-lg font-semibold py-3 px-10 rounded-full shadow transition-all duration-300 animate-bounce-hover" disabled onclick="location.href='https://24salbo.ru/game'; return false;">Проголосовать</button>
       </div>
     </form>
   </section>
@@ -94,6 +101,16 @@
   </footer>
 
   <script>
+    const voteForm = document.getElementById('voteForm');
+    const voteButton = document.getElementById('voteButton');
+    const radioButtons = voteForm.querySelectorAll('input[name="vote"]');
+
+    radioButtons.forEach(radio => {
+      radio.addEventListener('change', () => {
+        voteButton.disabled = false;
+      });
+    });
+
     const countdown = document.getElementById('countdown');
     const deadline = new Date("2025-04-28T23:59:59").getTime();
 
