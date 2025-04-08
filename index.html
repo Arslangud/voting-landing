@@ -28,11 +28,21 @@
         transform: translateY(0);
       }
     }
+    .animate-bounce-hover:hover {
+      animation: bounce 1s;
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
   </style>
 </head>
 <body class="bg-slate-900">
   <section class="min-h-screen flex flex-col justify-center px-4 py-6 bg-overlay relative text-center">
-    <img src="https://i.postimg.cc/g0tVMFcB/Salbo-logo1.jpg" alt="Логотип" class="w-16 h-16 absolute top-4 left-4 md:top-6 md:left-6">
     <div class="fade-in">
       <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Кто заслуживает твой голос?</h1>
       <p class="text-lg md:text-xl text-sky-200 mb-6 max-w-xl mx-auto">Прими участие в открытом голосовании — выбери своего фаворита.</p>
@@ -64,7 +74,7 @@
         <span class="text-sky-100 font-medium">Елизавета Гостюгова</span>
       </label>
       <div class="text-center pt-8">
-        <a href="#" class="inline-block bg-sky-600 hover:bg-sky-700 text-white text-lg font-semibold py-3 px-10 rounded-full shadow transition-all duration-300">Проголосовать</a>
+        <a href="https://24salbo.ru/game" class="inline-block bg-sky-600 hover:bg-sky-700 text-white text-lg font-semibold py-3 px-10 rounded-full shadow transition-all duration-300 animate-bounce-hover">Проголосовать</a>
       </div>
     </form>
   </section>
@@ -72,7 +82,7 @@
   <section class="py-12 px-4 bg-overlay fade-in">
     <div class="max-w-3xl mx-auto text-center">
       <h2 class="text-xl font-semibold text-white mb-4">Информация о голосовании</h2>
-      <p class="text-md text-sky-100 mb-2">🗓 Период голосования: <strong>01.05 – 10.05</strong></p>
+      <p class="text-md text-sky-100 mb-2">🗓 Период голосования: <strong>07.04 – 28.04</strong></p>
       <p class="text-md text-sky-100 mb-2">👥 Голосование открыто для всех</p>
       <p class="text-md text-sky-100">✅ Один голос — один выбор</p>
     </div>
@@ -86,7 +96,7 @@
 
   <script>
     const countdown = document.getElementById('countdown');
-    const deadline = new Date("2025-05-10T23:59:59").getTime();
+    const deadline = new Date("2025-04-28T23:59:59").getTime();
 
     const x = setInterval(() => {
       const now = new Date().getTime();
