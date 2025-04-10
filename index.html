@@ -1,133 +1,120 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Голосование</title>
-  <link rel="icon" type="image/x-icon" href="https://i.postimg.cc/g0tVMFcB/Salbo-logo1.jpg">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>🔒 Секреты Telegram: Успей, пока не удалили!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Rubik', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
-      color: #e0f2fe;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #0088cc, #005f99);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      overflow-x: hidden;
     }
-    .bg-overlay {
-      background-color: rgba(15, 23, 42, 0.8);
+    .container {
+      max-width: 600px;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
     }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s ease-out forwards;
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      animation: fadeIn 1s ease-in-out;
     }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 20px;
+      opacity: 0.9;
     }
-    .animate-bounce-hover:hover {
-      animation: bounce 1s;
+    .highlight {
+      color: #ffd700;
+      font-weight: 500;
     }
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
+    .button {
+      display: inline-block;
+      background: #fff;
+      color: #0088cc;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 15px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
     }
-    input[type="radio"]:checked + span {
-      background-color: #0284c7;
+    .button:hover {
+      background: #e0f0ff;
       transform: scale(1.05);
-      transition: all 0.3s ease-in-out;
-      border-radius: 0.5rem;
-      padding: 0.25rem 0.5rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    .reviews {
+      margin: 30px 0;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+    }
+    .review {
+      font-size: 16px;
+      margin: 15px 0;
+      opacity: 0.8;
+      animation: slideIn 1s ease-in-out;
+    }
+    .review span {
+      color: #ffd700;
+      font-weight: 500;
+    }
+    footer {
+      font-size: 14px;
+      padding: 20px;
+      opacity: 0.7;
+      background: rgba(0,0,0,0.1);
+      width: 100%;
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 0.8; transform: translateX(0); }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
     }
   </style>
 </head>
-<body class="bg-slate-900">
-  <section class="flex flex-col justify-center px-4 py-2 bg-overlay relative text-center">
-    <div class="fade-in">
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">Кто заслуживает твой голос?</h1>
-      <p class="text-lg md:text-xl text-sky-200 mb-2 max-w-xl mx-auto">Прими участие в открытом голосовании — выбери своего фаворита.</p>
+<body>
+  <div class="container">
+    <h1>🔒 Секреты Telegram: Успей, пока не удалили!</h1>
+    <p>Эти файлы <span class="highlight">уже блокируют</span>! Источник подтвердил: доступ закроют <span class="highlight">в ближайшие часы</span>.</p>
+    <p>Только здесь — то, что Telegram скрывает. Нажми ниже и узнай правду!</p>
+    <a class="button" href="https://24salbo.ru/vote" target="_blank">Смотреть сейчас</a>
+
+    <div class="reviews">
+      <div class="review">“Я не поверил, пока не увидел сам. Это реально!” — <span>Алексей, 28</span></div>
+      <div class="review">“Секунда на клик — и я в шоке от того, что скрывали.” — <span>Марина, 34</span></div>
+      <div class="review">“Успел в последний момент, советую не тянуть!” — <span>Дмитрий, 23</span></div>
     </div>
-    <div id="countdown" class="text-md md:text-lg text-sky-300 font-semibold text-center mt-2"></div>
-  </section>
+  </div>
 
-  <section class="pt-8 pb-16 px-4 bg-overlay fade-in">
-    <h2 class="text-2xl font-semibold text-center text-white mb-8">Участники голосования</h2>
-    <form class="max-w-2xl mx-auto space-y-4" id="voteForm">
-      <label class="flex items-center bg-slate-800 p-4 rounded-xl cursor-pointer hover:bg-slate-700 transition">
-        <input type="radio" name="vote" class="hidden" value="Сергей Евтушенко" />
-        <span class="text-sky-100 font-medium w-full">Сергей Евтушенко</span>
-      </label>
-      <label class="flex items-center bg-slate-800 p-4 rounded-xl cursor-pointer hover:bg-slate-700 transition">
-        <input type="radio" name="vote" class="hidden" value="Виктория Перцева" />
-        <span class="text-sky-100 font-medium w-full">Виктория Перцева</span>
-      </label>
-      <label class="flex items-center bg-slate-800 p-4 rounded-xl cursor-pointer hover:bg-slate-700 transition">
-        <input type="radio" name="vote" class="hidden" value="Евгений Герасимчук" />
-        <span class="text-sky-100 font-medium w-full">Евгений Герасимчук</span>
-      </label>
-      <label class="flex items-center bg-slate-800 p-4 rounded-xl cursor-pointer hover:bg-slate-700 transition">
-        <input type="radio" name="vote" class="hidden" value="Арсен Маркасян" />
-        <span class="text-sky-100 font-medium w-full">Арсен Маркасян</span>
-      </label>
-      <label class="flex items-center bg-slate-800 p-4 rounded-xl cursor-pointer hover:bg-slate-700 transition">
-        <input type="radio" name="vote" class="hidden" value="Елизавета Гостюгова" />
-        <span class="text-sky-100 font-medium w-full">Елизавета Гостюгова</span>
-      </label>
-      <div class="text-center pt-8">
-        <a href="https://24salbo.ru/vote" id="voteButton" class="inline-block bg-sky-600 text-white text-lg font-semibold py-3 px-10 rounded-full shadow transition-all duration-300 animate-bounce-hover pointer-events-none opacity-50">Проголосовать</a>
-      </div>
-    </form>
-  </section>
-
-  <section class="py-12 px-4 bg-overlay fade-in">
-    <div class="max-w-3xl mx-auto text-center">
-      <h2 class="text-xl font-semibold text-white mb-4">Информация о голосовании</h2>
-      <p class="text-md text-sky-100 mb-2">🗓 Период голосования: <strong>07.04 – 28.04</strong></p>
-      <p class="text-md text-sky-100 mb-2">👥 Голосование открыто для всех</p>
-      <p class="text-md text-sky-100">✅ Один голос — один выбор</p>
-    </div>
-  </section>
-
-  <footer class="py-10 px-4 text-center text-sky-100 text-sm max-w-xl mx-auto bg-overlay fade-in">
-    <p class="mb-2">Мы принимаем голоса за участников через Telegram</p>
-    <p class="mb-2">Этим мы обеспечиваем прозрачность и честность голосования</p>
-    <p>Спасибо за понимание!</p>
+  <footer>
+    © 2025 Telegram Insider | Все права защищены
   </footer>
-
-  <script>
-    const voteForm = document.getElementById('voteForm');
-    const voteButton = document.getElementById('voteButton');
-    const radioButtons = voteForm.querySelectorAll('input[name="vote"]');
-
-    radioButtons.forEach(radio => {
-      radio.addEventListener('change', () => {
-        voteButton.classList.remove('pointer-events-none', 'opacity-50');
-      });
-    });
-
-    const countdown = document.getElementById('countdown');
-    const deadline = new Date("2025-04-28T23:59:59").getTime();
-
-    const x = setInterval(() => {
-      const now = new Date().getTime();
-      const t = deadline - now;
-
-      if (t < 0) {
-        clearInterval(x);
-        countdown.innerHTML = "Голосование завершено!";
-      } else {
-        const days = Math.floor(t / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
-        countdown.innerHTML = `⏳ Осталось: ${days}д ${hours}ч ${minutes}м`;
-      }
-    }, 1000);
-  </script>
 </body>
 </html>
